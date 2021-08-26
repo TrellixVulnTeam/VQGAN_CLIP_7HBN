@@ -353,28 +353,38 @@ def load_image( infilename ) :
     img.load()
     data = np.asarray( img, dtype="int32" )
     return data
-title = "VQGAN + CLIP"
-description = "Gradio demo for VQGAN + CLIP. To use it, simply add your text, or click one of the examples to load them. Read more at the links below. Please click submit only once. Results will show up in under a minute."
-article = "<p style='text-align: center'>Originally made by Katherine Crowson (https://github.com/crowsonkb, https://twitter.com/RiversHaveWings). The original BigGAN+CLIP method was by https://twitter.com/advadnoun. Added some explanations and modifications by Eleiber#8347, pooling trick by Crimeacs#8222 (https://twitter.com/EarthML1) and the GUI was made with the help of Abulafia#3734. | <a href='https://colab.research.google.com/drive/1ZAus_gn2RhTZWzOWUpPERNC0Q8OhZRTZ'>Colab</a> | <a href='https://github.com/CompVis/taming-transformers'>Taming Transformers Github Repo</a> | <a href='https://github.com/openai/CLIP'>CLIP Github Repo</a> | Special thanks to BoneAmputee (https://twitter.com/BoneAmputee) for suggestions and advice</p>"
-gr.Interface(
-    inference, 
-    [gr.inputs.Textbox(label="Text Input"),
-     gr.inputs.Number(default=42, label="seed"),
-     gr.inputs.Slider(minimum=0.1, maximum=0.9, default=0.17, label='step size'),
-    gr.inputs.Slider(minimum=25, maximum=300, default=80, label='max iterations', step=1),
-    gr.inputs.Slider(minimum=200, maximum=400, default=256, label='width', step=1),
-    gr.inputs.Slider(minimum=200, maximum=400, default=256, label='height', step=1),
-    gr.inputs.Image(type="file", label="Initial Image"),
-    gr.inputs.Slider(minimum=0.0, maximum=15.0, default=0.0, label='Initial Weight', step=1.0),
-     ], 
-    [gr.outputs.Image(type="numpy", label="Output Image"),gr.outputs.Image(type="file", label="Output GIF")],
-    title=title,
-    description=description,
-    article=article,
-    examples=[
-              ['a garden by james gurney',42,0.16, 100, 256, 256, 'garden.jpeg', 0.0 ],
-              ['coral reef city artstationHQ',1000,0.6, 110, 200, 200, 'coralreef.jpeg', 0.0],
-              ['a cabin in the mountains unreal engine',98,0.3, 120, 280, 280, 'cabin.jpeg', 0.0]
-    ],
-    enable_queue=True
-    ).launch(debug=True)
+
+components.html(
+    """
+    <p>
+      This is me testing a static component.
+    </p>
+    """,
+    height=600,
+)
+
+# title = "VQGAN + CLIP"
+# description = "Gradio demo for VQGAN + CLIP. To use it, simply add your text, or click one of the examples to load them. Read more at the links below. Please click submit only once. Results will show up in under a minute."
+# article = "<p style='text-align: center'>Originally made by Katherine Crowson (https://github.com/crowsonkb, https://twitter.com/RiversHaveWings). The original BigGAN+CLIP method was by https://twitter.com/advadnoun. Added some explanations and modifications by Eleiber#8347, pooling trick by Crimeacs#8222 (https://twitter.com/EarthML1) and the GUI was made with the help of Abulafia#3734. | <a href='https://colab.research.google.com/drive/1ZAus_gn2RhTZWzOWUpPERNC0Q8OhZRTZ'>Colab</a> | <a href='https://github.com/CompVis/taming-transformers'>Taming Transformers Github Repo</a> | <a href='https://github.com/openai/CLIP'>CLIP Github Repo</a> | Special thanks to BoneAmputee (https://twitter.com/BoneAmputee) for suggestions and advice</p>"
+# gr.Interface(
+#     inference, 
+#     [gr.inputs.Textbox(label="Text Input"),
+#      gr.inputs.Number(default=42, label="seed"),
+#      gr.inputs.Slider(minimum=0.1, maximum=0.9, default=0.17, label='step size'),
+#     gr.inputs.Slider(minimum=25, maximum=300, default=80, label='max iterations', step=1),
+#     gr.inputs.Slider(minimum=200, maximum=400, default=256, label='width', step=1),
+#     gr.inputs.Slider(minimum=200, maximum=400, default=256, label='height', step=1),
+#     gr.inputs.Image(type="file", label="Initial Image"),
+#     gr.inputs.Slider(minimum=0.0, maximum=15.0, default=0.0, label='Initial Weight', step=1.0),
+#      ], 
+#     [gr.outputs.Image(type="numpy", label="Output Image"),gr.outputs.Image(type="file", label="Output GIF")],
+#     title=title,
+#     description=description,
+#     article=article,
+#     examples=[
+#               ['a garden by james gurney',42,0.16, 100, 256, 256, 'garden.jpeg', 0.0 ],
+#               ['coral reef city artstationHQ',1000,0.6, 110, 200, 200, 'coralreef.jpeg', 0.0],
+#               ['a cabin in the mountains unreal engine',98,0.3, 120, 280, 280, 'cabin.jpeg', 0.0]
+#     ],
+#     enable_queue=True
+#     ).launch(debug=True)
