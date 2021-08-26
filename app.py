@@ -15,8 +15,6 @@ Based on a notebook by Katherine Crowson (https://github.com/crowsonkb, https://
 """
 # nvidia-smi
 
-git clone https://github.com/openai/CLIP
-git clone https://github.com/CompVis/taming-transformers
 pip install ftfy regex tqdm omegaconf pytorch-lightning
 pip install kornia
 pip install einops
