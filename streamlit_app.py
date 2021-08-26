@@ -3,7 +3,8 @@
 import math
 import io
 import sys
-
+import streamlit as st
+import streamlit.components.v1 as components
 from IPython import display
 from PIL import Image
 import requests
@@ -183,3 +184,12 @@ def do_run():
                     display.display(display.Image(filename))
 
 do_run()
+
+components.html(
+    """
+    <div>
+      Testing
+    </div>
+    """,
+    height=600,
+)
