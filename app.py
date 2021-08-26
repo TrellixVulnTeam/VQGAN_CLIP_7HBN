@@ -14,10 +14,9 @@ Based on a notebook by Katherine Crowson (https://github.com/crowsonkb, https://
 ![visitors](https://visitor-badge.glitch.me/badge?page_id=mse_regulizer_colab_vqgan)
 """
 # nvidia-smi
-
-pip install ftfy regex tqdm omegaconf pytorch-lightning
-pip install kornia
-pip install einops
+# pip install ftfy regex tqdm omegaconf pytorch-lightning
+# pip install kornia
+# pip install einops
 
 curl -L 'https://heibox.uni-heidelberg.de/d/a7530b09fed84f80a887/files/?p=%2Fconfigs%2Fmodel.yaml&dl=1' > vqgan_imagenet_f16_16384.yaml
 curl -L 'https://heibox.uni-heidelberg.de/d/a7530b09fed84f80a887/files/?p=%2Fckpts%2Flast.ckpt&dl=1' > vqgan_imagenet_f16_16384.ckpt
