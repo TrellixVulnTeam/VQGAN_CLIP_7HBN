@@ -1,5 +1,7 @@
 # Imports
 
+curl -OL --http1.1 'https://the-eye.eu/public/AI/models/512x512_diffusion_unconditional_ImageNet/512x512_diffusion_uncond_finetune_008100.pt'
+
 import math
 import io
 import sys
