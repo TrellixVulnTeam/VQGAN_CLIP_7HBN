@@ -13,17 +13,16 @@ Based on a notebook by Katherine Crowson (https://github.com/crowsonkb, https://
 
 ![visitors](https://visitor-badge.glitch.me/badge?page_id=mse_regulizer_colab_vqgan)
 """
+# nvidia-smi
 
-!nvidia-smi
+git clone https://github.com/openai/CLIP
+git clone https://github.com/CompVis/taming-transformers
+pip install ftfy regex tqdm omegaconf pytorch-lightning
+pip install kornia
+pip install einops
 
-!git clone https://github.com/openai/CLIP
-!git clone https://github.com/CompVis/taming-transformers
-!pip install ftfy regex tqdm omegaconf pytorch-lightning
-!pip install kornia
-!pip install einops
-
-!curl -L 'https://heibox.uni-heidelberg.de/d/a7530b09fed84f80a887/files/?p=%2Fconfigs%2Fmodel.yaml&dl=1' > vqgan_imagenet_f16_16384.yaml
-!curl -L 'https://heibox.uni-heidelberg.de/d/a7530b09fed84f80a887/files/?p=%2Fckpts%2Flast.ckpt&dl=1' > vqgan_imagenet_f16_16384.ckpt
+curl -L 'https://heibox.uni-heidelberg.de/d/a7530b09fed84f80a887/files/?p=%2Fconfigs%2Fmodel.yaml&dl=1' > vqgan_imagenet_f16_16384.yaml
+curl -L 'https://heibox.uni-heidelberg.de/d/a7530b09fed84f80a887/files/?p=%2Fckpts%2Flast.ckpt&dl=1' > vqgan_imagenet_f16_16384.ckpt
 
 # Mirrors
 # !curl -L 'http://mirror.io.community/blob/vqgan/vqgan_imagenet_f16_16384.yaml' > vqgan_imagenet_f16_16384.yaml
